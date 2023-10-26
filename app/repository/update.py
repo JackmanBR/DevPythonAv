@@ -1,6 +1,6 @@
 import mysql.connector
 
-def dataUpdate():
+def dataUpdate(choice, oldVar, newVar):
     db = mysql.connector.connect(
         host="localhost",
         user="root",
@@ -9,12 +9,12 @@ def dataUpdate():
     )
     mycursor = db.cursor()
 
-    oldVar = "1818181818"
-    newVar = "99999999"
-
     try:
 
-        sql = "UPDATE process SET processo = %s WHERE processo = %s"
+        if choice == 1:
+            sql = "UPDATE process SET processo = %s WHERE processo = %s"
+        if choice ==2:
+            sql = "UPDATE process SET autor = %s WHERE autor = %s"
         mycursor.execute(sql, (newVar, oldVar))
 
         db.commit()
@@ -28,7 +28,6 @@ def dataUpdate():
 
         db.close()
         db.close()
-
 
 dataUpdate()
 
