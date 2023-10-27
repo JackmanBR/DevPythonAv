@@ -12,18 +12,18 @@ def dataUpdate(id, process, author):
 
         cursor = conn.cursor()
 
-        id_processo = id
+        id_process = id
 
-        cursor.execute("SELECT * FROM process WHERE id = %s", (id_processo,))
+        cursor.execute("SELECT * FROM process WHERE id = %s", (id_process,))
         processo = cursor.fetchone()
 
         if processo is None:
-            print("O ID fornecido não foi encontrado na tabela.")
+            print("O ID informado não foi encontrado na tabela.")
         else:
-            novo_processo = process
-            novo_autor = author
+            new_process = process
+            new_autor = author
 
-            cursor.execute("UPDATE process SET processo = %s, autor = %s WHERE id = %s", (novo_processo, novo_autor, id_processo))
+            cursor.execute("UPDATE process SET processo = %s, autor = %s WHERE id = %s", (new_process, new_autor, id_process))
             conn.commit()
             print("Valores atualizados com sucesso!")
 
