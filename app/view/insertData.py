@@ -3,9 +3,6 @@ from app.entities import process
 from app.repository import insert
 from app.view import home
 
-processOne = process
-
-
 def insertDataProcess():
     while True:
         print("=======================" * 2, "SISTEMA DE CONTROLE PROCESSUAL", "=======================" * 2, "\n")

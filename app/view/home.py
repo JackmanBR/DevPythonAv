@@ -1,5 +1,6 @@
 import time
 from app.view import insertData
+from app.view import consultData
 def home():
     while True:
         print("======================="*2, "SISTEMA DE CONTROLE PROCESSUAL","======================="*2, "\n")
@@ -12,13 +13,13 @@ def home():
                 if option == 1:
                     insertData.insertDataProcess()
                 if option == 2:
-                    break
+                    consultData.consultDataProcess()
                 if option == 3:
                     break
                 if option == 4:
                     break
                 if option == 5:
-                    break
+                    exit()
             else:
                 print("Entrada inválida. Por favor, digite um número entre 1 e 5.\n")
                 time.sleep(1)

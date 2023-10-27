@@ -1,25 +1,28 @@
 import mysql.connector
 
-
 def dataConsult():
+    try:
+        db = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            passwd="123456",
+            database="pythonav"
+        )
 
-    db = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        passwd="123456",
-        database="pythonav"
-    )
+        cursor = db.cursor()
 
-    cursor = db.cursor()
+        query = "SELECT * FROM `process`"
 
-    query = "SELECT * FROM process"
+        cursor.execute(query)
 
-    cursor.execute(query)
+        results = cursor.fetchall()
 
-    results = cursor.fetchall()
+        for row in results:
+            print(row)
 
-    for row in results:
-        print(row)
+    except mysql.connector.Error as err:
+        print(f"Erro: {err}")
 
-    cursor.close()
-    db.close()
+
+        cursor.close()
+        db.close()
