@@ -25,7 +25,7 @@ def dataUpdate(id, process, author):
 
             cursor.execute("UPDATE process SET processo = %s, autor = %s WHERE id = %s", (new_process, new_autor, id_process))
             conn.commit()
-            print("Valores atualizados com sucesso!")
+            print("Valores atualizados com sucesso,retornando ao menu inicial!")
 
     except mysql.connector.Error as err:
         print("Erro MySQL:", err)

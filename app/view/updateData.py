@@ -16,7 +16,7 @@ def updateDataProcess():
 
         while True:
 
-            idToSearch = input("Digite o ID númerico do processo: \n")
+            idToSearch = input("\nDigite o ID númerico do processo: \n")
 
             if idToSearch.isdigit():
                 break
@@ -40,6 +40,8 @@ def updateDataProcess():
                 print("O nome do cliente não pode conter números, apenas letras.\n")
 
         update.dataUpdate(idToSearch, processToChange, nameToChange)
+
+        break
 
     time.sleep(2)
 
