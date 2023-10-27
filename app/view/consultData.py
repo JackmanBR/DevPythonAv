@@ -24,7 +24,6 @@ def consultDataProcess():
         while True:
             optionConsult= input("Aperte 0 para voltarao menu inicial!")
 
-            #option = int(option)
             if optionConsult.isdigit():
                 optionConsult = int(optionConsult)
 

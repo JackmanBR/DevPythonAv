@@ -1,6 +1,7 @@
 import time
 from app.view import insertData
 from app.view import consultData
+from app.view import updateData
 def home():
     while True:
         print("======================="*2, "SISTEMA DE CONTROLE PROCESSUAL","======================="*2, "\n")
@@ -15,7 +16,7 @@ def home():
                 if option == 2:
                     consultData.consultDataProcess()
                 if option == 3:
-                    break
+                    updateData.updateDataProcess()
                 if option == 4:
                     break
                 if option == 5:

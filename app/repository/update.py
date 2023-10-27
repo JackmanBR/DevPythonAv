@@ -1,35 +1,41 @@
 import mysql.connector
 
-def dataUpdate(choice, oldVar, newVar):
-    db = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        passwd="123456",
-        database="pythonav"
-    )
-    mycursor = db.cursor()
-
+def dataUpdate(id, process, author):
     try:
+        # Conecte-se ao banco de dados MySQL
+        conn = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="123456",
+            database="pythonav"
+        )
 
-        if choice == 1:
-            sql = "UPDATE process SET processo = %s WHERE processo = %s"
-        if choice ==2:
-            sql = "UPDATE process SET autor = %s WHERE autor = %s"
-        mycursor.execute(sql, (newVar, oldVar))
+        cursor = conn.cursor()
 
-        db.commit()
+        id_processo = id
 
-        print(f"Valor {oldVar} atualizado para {newVar} com sucesso.")
+        cursor.execute("SELECT * FROM process WHERE id = %s", (id_processo,))
+        processo = cursor.fetchone()
+
+        if processo is None:
+            print("O ID fornecido não foi encontrado na tabela.")
+        else:
+            novo_processo = process
+            novo_autor = author
+
+            cursor.execute("UPDATE process SET processo = %s, autor = %s WHERE id = %s", (novo_processo, novo_autor, id_processo))
+            conn.commit()
+            print("Valores atualizados com sucesso!")
 
     except mysql.connector.Error as err:
-        print(f"Erro ao atualizar valor: {err}")
+        print("Erro MySQL:", err)
 
     finally:
+        # Feche a conexão com o banco de dados, independentemente de qualquer exceção
+        if conn:
+            conn.close()
 
-        db.close()
-        db.close()
 
-dataUpdate()
 
 
 
