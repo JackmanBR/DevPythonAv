@@ -1,25 +1,29 @@
 import mysql.connector
 
-def dataDelete(id):
-    db = mysql.connector.connect(
+def deleteDataProcess(id):
+    conn = mysql.connector.connect(
         host="localhost",
         user="root",
-        passwd="123456",
+        password="123456",
         database="pythonav"
     )
 
-    id = 1
-
-    cursor = db.cursor()
-
-    sql = "DELETE FROM process WHERE id = %s"
+    cursor = conn.cursor()
 
     try:
-        cursor.execute(sql, (id,))
-        db.commit()
-        print(f"Registro com ID {id} apagado com sucesso.")
-    except mysql.connector.Error as err:
-        print(f"Erro: {err}")
+
+        idToDelete = id
+
+        delete_query = "DELETE FROM process WHERE id = %s"
+        cursor.execute(delete_query, (idToDelete,))
+
+        conn.commit()
+
+        print(f"Registros com ID {idToDelete} foram excluídos com sucesso.")
+
+    except mysql.connector.Error as error:
+        print(f"Erro ao excluir registros: {error}")
+
     finally:
         cursor.close()
-        db.close()
+        conn.close()

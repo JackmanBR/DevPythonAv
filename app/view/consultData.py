@@ -22,7 +22,7 @@ def consultDataProcess():
         print("\n")
 
         while True:
-            optionConsult= input("Aperte 0 para voltarao menu inicial!")
+            optionConsult= input("Aperte 0 para voltar ao menu inicial!")
 
             if optionConsult.isdigit():
                 optionConsult = int(optionConsult)

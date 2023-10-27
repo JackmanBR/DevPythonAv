@@ -2,6 +2,7 @@ import time
 from app.view import insertData
 from app.view import consultData
 from app.view import updateData
+from app.view import deleteData
 def home():
     while True:
         print("======================="*2, "SISTEMA DE CONTROLE PROCESSUAL","======================="*2, "\n")
@@ -18,7 +19,7 @@ def home():
                 if option == 3:
                     updateData.updateDataProcess()
                 if option == 4:
-                    break
+                    deleteData.deleteDataProcess()
                 if option == 5:
                     exit()
             else:
