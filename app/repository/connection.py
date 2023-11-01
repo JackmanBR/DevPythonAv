@@ -1,6 +1,6 @@
 import mysql.connector
 from mysql.connector import errorcode
-
+#CRIAR CONEXÃO BANCO DE DADOS
 def dbConnection():
 	try:
 		conn = mysql.connector.connect(host='localhost',

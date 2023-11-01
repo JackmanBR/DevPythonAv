@@ -1,5 +1,7 @@
 import mysql.connector
 
+#CRIAR TABELA NO BANCO
+
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",

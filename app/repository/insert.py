@@ -1,5 +1,5 @@
 import mysql.connector
-
+#INSERIR DADOS NO BANCO
 def dataInsert(process, client):
     db = mysql.connector.connect(
         host="localhost",

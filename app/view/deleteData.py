@@ -2,6 +2,7 @@ import time
 from app.repository import consult
 from app.repository import delete
 from app.view import home
+#TELA DE DELETAR DADOS
 def deleteDataProcess():
     while True:
         print("=======================" * 2, "SISTEMA DE CONTROLE PROCESSUAL", "=======================" * 2, "\n")

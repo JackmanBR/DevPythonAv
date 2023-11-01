@@ -3,7 +3,7 @@ from app.repository import consult
 from app.repository import update
 from app.view import home
 
-
+#TELA DE ATUALIZAR
 def updateDataProcess():
     while True:
         print("=======================" * 2, "SISTEMA DE CONTROLE PROCESSUAL", "=======================" * 2, "\n")

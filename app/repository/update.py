@@ -1,5 +1,6 @@
 import mysql.connector
 
+#ATUALIZAR DADOS NO BANCO
 def dataUpdate(id, process, author):
     try:
         # Conecte-se ao banco de dados MySQL

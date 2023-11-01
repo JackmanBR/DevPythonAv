@@ -1,5 +1,6 @@
 import mysql.connector
 
+#CONSULTAR DADOS DO BANCO
 def dataConsult():
     try:
         db = mysql.connector.connect(

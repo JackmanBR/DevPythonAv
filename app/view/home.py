@@ -5,6 +5,8 @@ from app.view import updateData
 from app.view import deleteData
 from app.core import core
 from app.view import home
+
+#TELA DE HOME
 def home():
     while True:
         print("======================="*2, "SISTEMA DE CONTROLE PROCESSUAL","======================="*2, "\n")

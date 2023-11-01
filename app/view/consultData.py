@@ -4,6 +4,7 @@ from app.repository import insert
 from app.repository import consult
 from app.view import home
 
+#TELA DE CONSULTA
 def consultDataProcess():
     while True:
         print("=======================" * 2, "SISTEMA DE CONTROLE PROCESSUAL", "=======================" * 2, "\n")

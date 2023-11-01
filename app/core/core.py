@@ -1,5 +1,7 @@
 from app.view import home
 import time
+
+#METODO PARA GERAR O TXT COM BAE NA HORA E NA DATA DO ACESSO
 def registerArchivrOfData():
     import datetime
     import os

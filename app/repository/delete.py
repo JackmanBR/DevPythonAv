@@ -1,5 +1,6 @@
 import mysql.connector
 
+#DELETAR DADO DO BANCO
 def deleteDataProcess(id):
     conn = mysql.connector.connect(
         host="localhost",
