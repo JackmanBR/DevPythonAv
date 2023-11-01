@@ -1,5 +1,7 @@
 import mysql.connector
+###atenção###
 
+#Este método é apenas para criar um novo banco se não existir banco, executar esta opção apenas através desta classe, não foi iserido no menu para evitar uso indevido.
 #CRIAR TABELA NO BANCO
 
 conexao = mysql.connector.connect(
